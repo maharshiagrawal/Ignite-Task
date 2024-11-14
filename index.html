@@ -7,7 +7,7 @@
     <script>
         async function getGreeting() {      // Js Function to get/fetch the greet message from app.py or from Flask API
             const language = document.getElementById("language").value; // It selects the language from the dropdown ie.English,French or Hindi
-            const response = await fetch(`http://localhost:5000/hello?language=${language}`); //It sends the request to the Flask API with the selected language
+            const response = await fetch(`http://43.204.145.157:8088/hello?language=${language}`);  //It sends the request to the Flask API with the selected language
             
             if (!response.ok) { // It is checking if the network response is successfull if not then return 'Error Fetching the greet message'.
                 console.error('Network response was not ok:', response.statusText);
@@ -28,6 +28,6 @@
         <option value="Hindi">Hindi</option>
     </select>
     <button onclick="getGreeting()">Get Greeting</button>  <!-- Button which triggers the getGreeting function of JS-->
-    <h2>Greeting: <span id="greet"></span></h2> <!-- Heading to display the greet message ,Initially empty-->
+    <h2>Greeting: <span id="greet"></span></h2> <!-- Heading to display the greet message , Initially empty-->
 </body>
 </html>
